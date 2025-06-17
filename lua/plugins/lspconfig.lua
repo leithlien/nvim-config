@@ -10,6 +10,8 @@ return {
 	config = function()
 		require("mason").setup()
 
+		vim.api.nvim_set_keymap("n", "E", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"ts_ls",
